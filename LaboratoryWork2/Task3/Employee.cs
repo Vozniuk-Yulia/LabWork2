@@ -8,9 +8,10 @@ namespace Task3
 {
     public class Employee
     {
-        private int salaryJun = 10000;
-        private int salaryMid = 15000;
-        private int salarySen = 23000;
+        private int salary;
+        private int oklad=1000;
+        public const double TAX = 0.2;
+        public int impost;
         private string name;
         private string surname;
         public Employee(string name, string surname)
@@ -28,29 +29,59 @@ namespace Task3
             get { return surname; }
             set { surname = value; }
         }
+        public int Salary
+        {
+            get { return salary; }
+            set { salary = value; }
+        }
+        public int Oklad
+        {
+            get { return oklad; }
+            set { oklad = value; }
+        }
+        public int Impost
+        {
+            get { return impost; }
+            set { impost = value; }
+        }
         public int SalaryJun(int experience)
         {
-            if(experience>3)
+            salary = 10000;
+
+            if(experience>0)
             {
-                salaryJun += 5000;
+                oklad*=experience;
+                salary += oklad;
+                impost = (int)(salary * TAX);
+                salary -= impost;
             }
-            return salaryJun;
+            return salary;
         }
         public int SalaryMid(int experience)
         {
-            if (experience > 3)
+            salary = 15000;
+
+            if (experience > 0)
             {
-                salaryMid += 5000;
+                oklad *= experience;
+                salary += oklad;
+                impost = (int)(salary * TAX);
+                salary -= impost;
             }
-            return salaryMid;
+            return salary;
         }
         public int  SalarySen(int experience)
         {
-            if (experience > 3)
+            salary = 20000;
+
+            if (experience > 0)
             {
-                salarySen += 5000;
+                oklad *= experience;
+                salary += oklad;
+                impost = (int)(salary * TAX);
+                salary -= impost;
             }
-            return salarySen;
+            return salary;
         }
 
     }

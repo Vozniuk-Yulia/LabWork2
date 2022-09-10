@@ -19,15 +19,15 @@ namespace Task3
             {
                 case 1:
                     Console.WriteLine($"Name: {employee.Name}, Surname: {employee.Surname}");
-                    Console.WriteLine(employee.SalaryJun(experience));
+                    Console.WriteLine($"Salary: {employee.SalaryJun(experience)}");
                     break;
                 case 2:
                     Console.WriteLine($"Name: {employee.Name}, Surname: {employee.Surname}");
-                    Console.WriteLine(employee.SalaryMid(experience));
+                    Console.WriteLine($"Salary:{employee.SalaryMid(experience)}");
                     break;
                 case 3:
                     Console.WriteLine($"Name: {employee.Name}, Surname: {employee.Surname}");
-                    Console.WriteLine(employee.SalarySen(experience));
+                    Console.WriteLine($"Salary: {employee.SalarySen(experience)}");
                     break;
                 default:
                     Console.WriteLine("No right");
